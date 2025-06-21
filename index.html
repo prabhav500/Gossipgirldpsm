@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XOXO Gossip Girls</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes appear {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0;
+      background-color: #000000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .intro {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .intro img {
+      width: 100px;
+      animation: pulse 2s infinite;
+    }
+    .intro h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: #ff007f;
+    }
+    .container {
+      text-align: center;
+      opacity: 0;
+      animation: appear 1.5s ease 3s forwards;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ff007f;
+      text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    }
+    .quote {
+      font-size: 1rem;
+      font-style: italic;
+      color: #ff66aa;
+      margin-bottom: 2rem;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .icon {
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+      animation: pulse 3s infinite;
+    }
+    .icon img {
+      width: 64px;
+      height: 64px;
+    }
+    .icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff007f88;
+    }
+    .icon h2 {
+      color: #ff66aa;
+      margin-top: 0.75rem;
+      font-size: 1rem;
+    }
+    footer {
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      color: #ff66aa;
+    }
+    .footer-tagline {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-style: italic;
+      color: #ffffffaa;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      document.querySelector('.intro').style.display = 'none';
+      document.querySelector('.container').style.opacity = '1';
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div class="intro">
+    <img src="https://img.icons8.com/emoji/96/shushing-face.png" alt="Shhh">
+    <h1>Shhh... It's Gossip Time</h1>
+  </div>
+  <div class="container">
+    <h1>XOXO, Gossip Girls 💋</h1>
+    <p class="quote">“Some secrets are too delicious to keep.”</p>
+    <p class="quote">“At this school, privacy is a myth and drama is a lifestyle.”</p>
+    <div class="icon-grid">
+      <a href="confessions.html">
+        <div class="icon">
+          <img src="https://img.icons8.com/ios-glyphs/100/ff007f/speech-bubble-with-dots.png"/>
+          <h2>Confessions</h2>
+        </div>
+      </a>
+      <a href="rumors.html">
+        <div class="icon">
+          <img src="https://img.icons8.com/ios-filled/100/ff007f/whisper.png"/>
+          <h2>Rumors</h2>
+        </div>
+      </a>
+      <a href="gossips.html">
+        <div class="icon">
+          <img src="https://img.icons8.com/ios-filled/100/ff007f/communication.png"/>
+          <h2>Gossips</h2>
+        </div>
+      </a>
+      <a href="upload.html">
+        <div class="icon">
+          <img src="https://img.icons8.com/ios-filled/100/ff007f/upload.png"/>
+          <h2>Upload Gossip</h2>
+        </div>
+      </a>
+      <a href="question.html">
+        <div class="icon">
+          <img src="https://img.icons8.com/ios-filled/100/ff007f/help.png"/>
+          <h2>Question of the Day</h2>
+        </div>
+      </a>
+    </div>
+    <footer>
+      You know you love me — xoxo 💋
+      <div class="footer-tagline">Broadcasting secrets straight from DPS Megacity 🎤💄</div>
+    </footer>
+  </div>
+</body>
+</html>

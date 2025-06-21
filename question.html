@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question of the Day | Gossip Girl</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ff007f;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    .question-box {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 10px #ff007f33;
+    }
+    .question-box p {
+      font-size: 1.2rem;
+      color: #ff66aa;
+    }
+    form {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    textarea, button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    button {
+      background-color: #ff007f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d6006d;
+    }
+    footer {
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>❓ Question of the Day</h1>
+
+  <div class="question-box">
+    <!-- Replace this manually each day -->
+    <p><strong>Today's Question:</strong><br> Who do you think is hiding the biggest secret in school?</p>
+  </div>
+
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <textarea name="answer" placeholder="Your anonymous answer..." required></textarea>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="QOTD Response">
+    <input type="hidden" name="owner-handle" value="hidden-owner-key">
+
+    <button type="submit">Submit Answer 💌</button>
+  </form>
+
+  <footer>
+    Answers will disappear when tomorrow’s question arrives. Keep watching. xoxo 💋
+  </footer>
+</body>
+</html>

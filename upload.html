@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Gossip | Gossip Girl</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #ff007f;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      color: #aaa;
+      max-width: 600px;
+    }
+    form {
+      margin-top: 2rem;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ff007f33;
+      max-width: 600px;
+      width: 100%;
+    }
+    textarea, select, input[type="file"], button {
+      width: 100%;
+      margin: 1rem 0;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      height: 150px;
+    }
+    button {
+      background-color: #ff007f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d6006d;
+    }
+  </style>
+</head>
+<body>
+  <h1>💬 Submit Your Secret</h1>
+  <p>Your confession, gossip, or rumor will be handled anonymously. You may upload up to 5 images or 1 video (max 30MB).</p>
+
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" enctype="multipart/form-data">
+    <textarea name="message" placeholder="Spill the tea..." required></textarea>
+
+    <select name="type">
+      <option value="confession">Confession</option>
+      <option value="gossip">Gossip</option>
+      <option value="rumor">Rumor</option>
+    </select>
+
+    <input type="file" name="images" accept="image/*,video/*" multiple>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="New GossipGirl Upload">
+    <input type="hidden" name="owner-handle" value="hidden-owner-key">
+
+    <button type="submit">Submit 🔥</button>
+  </form>
+</body>
+</html>

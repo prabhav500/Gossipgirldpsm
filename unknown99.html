@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Gossip Admin - prabhav500</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #000;
+      color: #ff66aa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .box {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #ff007f88;
+      display: none;
+      max-width: 700px;
+    }
+    input, textarea, select, button {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #ff007f;
+      color: white;
+      cursor: pointer;
+    }
+    .login-box input {
+      margin-bottom: 1rem;
+    }
+    .editor {
+      margin-top: 2rem;
+    }
+    .submissions {
+      margin-top: 2rem;
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .submission {
+      border-bottom: 1px solid #ff007f44;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Enter Secret Key</h2>
+    <input type="password" id="adminKey" placeholder="Enter password...">
+    <button onclick="unlock()">Unlock</button>
+  </div>
+
+  <div class="box" id="adminPanel">
+    <h2>Post New Gossip</h2>
+    <form action="https://formspree.io/f/xpzvdpvd" method="POST" enctype="multipart/form-data">
+      <select name="category">
+        <option value="Confession">Confession</option>
+        <option value="Rumor">Rumor</option>
+        <option value="Gossip">Gossip</option>
+      </select>
+      <textarea name="gossip" id="gossipText" rows="6" placeholder="Write gossip here..."></textarea>
+      <input type="file" name="media" accept="image/*,video/*">
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="editor">
+      <h2>Edit Existing Gossip</h2>
+      <textarea id="editBox" rows="6" placeholder="Paste or write existing gossip to edit..."></textarea>
+      <button onclick="updateGossip()">Save Changes</button>
+    </div>
+
+    <div class="submissions">
+      <h2>Preview Sample Posts</h2>
+      <div class="submission">
+        <strong>[Confession]</strong> I once stole chalks from the staff room just to draw on the basketball court.
+      </div>
+      <div class="submission">
+        <strong>[Rumor]</strong> Heard someone from 12B got a secret suspension no one's talking about...
+      </div>
+      <div class="submission">
+        <strong>[Gossip]</strong> Someone saw A and B hugging near the back gate yesterday 👀
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SECRET = "prabhavguptagossipgirls";
+
+    function unlock() {
+      const key = document.getElementById('adminKey').value;
+      if (key === SECRET) {
+        document.querySelector('.login-box').style.display = 'none';
+        document.getElementById('adminPanel').style.display = 'block';
+      } else {
+        alert("Wrong password! Try again.");
+      }
+    }
+
+    function updateGossip() {
+      const editedText = document.getElementById('editBox').value;
+      if (editedText.trim()) {
+        alert("Edited gossip saved locally. You can manually copy and update it into the public pages.");
+        document.getElementById('editBox').value = '';
+      } else {
+        alert("Please paste or write some gossip to edit.");
+      }
+    }
+  </script>
+</body>
+</html>
